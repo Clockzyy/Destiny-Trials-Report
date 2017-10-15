@@ -1,20 +1,22 @@
+@import "sass/variables";
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
 :local(.base){
-    height: 44px;
-    width: 44px;
-    border-width: 3px;
+    $width: 80px;
+    height: $width;
+    width: $width;
+    border-width: 6px;
     border-style: solid;
-    border-color: rgba(50, 106, 218, 0.75) rgba(18, 44, 97, 0.25) rgba(18, 44, 97, 0.25) rgba(18, 44, 97, 0.25);
+    border-color: rgba($color-primary, 1) rgba($color-white, 0.4) rgba($color-white, 0.4) rgba($color-white, 0.4);
     border-radius: 100%;
     animation: spin 0.75s linear infinite;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-left: -22px;
-    margin-top: -22px;
+    margin-left: -$width/2;
+    margin-top: -$width/2;
 
 }

@@ -8,10 +8,10 @@ let cx = classNamesBind.bind(styles);
 
 import store from "store";
 
-import Header from "containers/Header";
-import Stats from "containers/Stats";
+import Totals from "./Totals";
+import Weapons from "./Weapons";
 
-export default class WeekReport extends React.Component {
+export default class Stats extends React.Component {
     constructor() {
         super();
     }
@@ -20,8 +20,9 @@ export default class WeekReport extends React.Component {
         const className = cx("base")
         return (
             <div className={className}>
-                <Header/>
-                <Stats/>
+                <Totals/>
+                <hr/>
+                <Weapons/>
             </div>
         );
     }

@@ -1,0 +1,18 @@
+@import "sass/variables";
+@import "sass/mixins/media";
+@import "sass/mixins/content-center";
+
+:local(.base){
+    position: relative;
+    padding: $gutter;
+    background-color: $color-dark;
+    @include content-center;
+    @include desktop{
+        border-radius: 8px;
+        top: -$gutter*2;
+    }
+    hr{
+        border-color: $color-border;
+        margin: $gutter 0;
+    }
+}

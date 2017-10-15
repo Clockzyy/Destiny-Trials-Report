@@ -1,0 +1,61 @@
+@import "sass/variables";
+@import "sass/mixins/media";
+:local(.base){
+    display: flex;
+    flex-direction: column;
+    @include desktop{
+        flex-direction: row;
+    }
+    table{
+        font-size: 18px;
+        border-spacing: $gutter/2;
+
+        border-collapse: separate;
+        margin: 0 auto;
+        @include desktop{
+            width: auto;
+            margin: 0;
+            margin-left: auto;
+        }
+        td:first-child {
+           border-left: 0;
+        }
+        tbody{
+            *{
+                vertical-align: middle;
+                color: $color-gray-light;
+            }
+            th{
+                color: $color-primary;
+                text-align: left;
+            }
+            img{
+                height: 30px;
+                width: 30px;
+                display: inline-block;
+            }
+        }
+    }
+    @include phone{
+        .matches, .matchesPercentage{
+            display: none;
+        }
+    }
+
+    .title{
+        margin-top: $gutter/2;
+        color: $color-gray;
+        text-align: center;
+        @include desktop{
+            text-align: left;
+            margin-left: $gutter/2;
+        }
+    }
+
+    p{
+
+    }
+    sub{
+        color: $color-gray;
+    }
+}

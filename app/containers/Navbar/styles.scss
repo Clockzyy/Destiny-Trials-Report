@@ -1,0 +1,57 @@
+@import "sass/variables";
+@import "sass/mixins/media";
+:local(.base){
+    display: flex;
+    align-items: center;
+    height: $navbar-height;
+    background-color: $color-body;
+    color: $color-dark;
+
+    padding: 0 $gutter;
+    form{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        height: $navbar-height - $gutter;
+        border: 1px solid $color-border;
+        border-radius: 10px;
+    }
+    .name-input{
+        flex: 2;
+        min-width: 10px;
+        height: 100%;
+        border: 0;
+        border-radius: 6px 0px 0px 6px;
+        background-color: transparent;
+        color: $color-gray-light;
+        padding: 10px;
+        background-color: $color-light;
+    }
+    .type-select{
+        flex: 1;
+        height: 100%;
+        border: 0;
+        border-left: 1px solid $color-border;
+        color: $color-gray-light;
+        background-color: transparent;
+        padding: 10px;
+        background-color: $color-light;
+        option{
+            background-color: $color-light;
+        }
+    }
+    .submit{
+        width: $navbar-height - $gutter;
+        height: 100%;
+        padding: $gutter/2;
+        background: transparent;
+        border: 0;
+        outline: 0;
+        background-color: $color-primary;
+        color: white;
+
+        border-radius: 0px 6px 6px 0px;
+        i{
+        }
+    }
+}

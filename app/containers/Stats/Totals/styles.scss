@@ -1,0 +1,34 @@
+@import "sass/variables";
+@import "sass/mixins/media";
+:local(.base){
+    display: flex;
+    flex-direction: column;
+    color: $color-primary;
+    padding: $gutter/2;
+    @include desktop{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .title{
+        color: $color-gray;
+        text-align: center;
+        @include desktop{
+            text-align: left;
+        }
+    }
+    div{
+        display: flex;
+        justify-content: space-between;
+        @include desktop{
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        p{
+
+        }
+        sub{
+            color: $color-gray;
+        }
+    }
+}

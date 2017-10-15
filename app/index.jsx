@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import {MobxRouter} from "mobx-router";
+import store from "store";
+
 import styles from "sass/global";
 
-import Layout from "containers/Layout";
-
-ReactDOM.render(<Layout/>, document.getElementById('app'));
+ReactDOM.render(<MobxRouter store={store}/>, document.getElementById('app'));

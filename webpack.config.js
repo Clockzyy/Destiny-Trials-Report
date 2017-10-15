@@ -52,7 +52,7 @@ const different = function(build) {
     switch(build) {
         case "development":
             return {
-                entry: ["whatwg-fetch", PATHS.app],
+                entry: ["babel-polyfill","whatwg-fetch", PATHS.app],
                 output: {
                     publicPath: '/',
                     filename: 'bundle.js'
@@ -87,7 +87,7 @@ const different = function(build) {
         case "production":
             return {
                 entry: {
-                    app: ["whatwg-fetch",PATHS.app],
+                    app: ["babel-polyfill","whatwg-fetch",PATHS.app],
                     vendor: Object.keys(packages.dependencies)
                 },
                 output: {

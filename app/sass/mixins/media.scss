@@ -1,5 +1,12 @@
+@import "sass/variables";
 @mixin desktop(){
     @media (min-width: #{$desktop-width}){
+        @content;
+    }
+}
+
+@mixin phone(){
+    @media (max-width: #{$desktop-width}){
         @content;
     }
 }

@@ -1,14 +1,12 @@
 @import "sass/variables";
-@import "sass/mixins/content-center";
 @import "sass/mixins/media";
+@import "sass/mixins/box-shadow";
+
 :local(.base){
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: $spacer;
-    padding: $spacer;
-    @include content-center;
+    // @include content-center;
 
     @include desktop{
-        grid-template-columns: repeat(3, 1fr);
+        padding-bottom: $gutter;
+        @include box-shadow(2);
     }
 }

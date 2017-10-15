@@ -1,0 +1,12 @@
+@import "sass/variables";
+@import "sass/mixins/media";
+
+:local(.base){
+    min-height: 100vh;
+
+    color: $color-white;
+    background-color: $color-body;
+    // @include desktop{
+    //     background: $color-body;
+    // }
+}

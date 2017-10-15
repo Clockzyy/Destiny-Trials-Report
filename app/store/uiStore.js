@@ -1,29 +1,20 @@
-import {computed, observable, reaction, action} from "mobx";
+import {computed, observable, reaction, action, observe} from "mobx";
+import destinyStore from "./destinyStore";
 
-export default class uiStore{
+
+export class UiStore{
+    @observable loading = true
+
     constructor(){
-        this.showDiscordPopup = this.showDiscordPopup.bind(this);
-        this.hideDiscordPopup = this.hideDiscordPopup.bind(this);
-        this.showNavbar = this.showNavbar.bind(this);
-        this.hideNavbar = this.hideNavbar.bind(this);
-        this.toggleNavbar = this.toggleNavbar.bind(this);
-    }
-    @observable isDiscordPopupOpen = false;
-    @observable isNavbarOpen = false;
-
-    @action showDiscordPopup(){
-        this.isDiscordPopupOpen = true;
-    }
-    @action hideDiscordPopup(){
-        this.isDiscordPopupOpen = false;
-    }
-    @action showNavbar(){
-        this.isNavbarOpen = true;
-    }
-    @action hideNavbar(){
-        this.isNavbarOpen = false;
-    }
-    @action toggleNavbar(){
-        this.isNavbarOpen = !this.isNavbarOpen;
+        observe(destinyStore, ({name})=>{
+            if(name == "weekStats"){
+                // setTimeout(2000, ()=>{
+                    this.loading = false;
+                // })
+            }
+        })
     }
 }
+
+const singleton = new UiStore();
+export default singleton;
