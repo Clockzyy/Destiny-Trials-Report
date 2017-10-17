@@ -23,7 +23,7 @@ export class DestinyStore{
             }).catch(ex=>{
                 console.error(ex);
             });
-        // this.getDefinitions();
+        this.getDefinitions();
     }
     @observable definitions;
     @observable weekStats;
@@ -31,8 +31,9 @@ export class DestinyStore{
         if(this.definitions){
             return this.definitions;
         }
-        const definitions = await fetch(`https://cors-anywhere.herokuapp.com/http://api.destinytrialsreport.com/destiny2/en/DestinyDefinitions.json`, fetchObj)
+        const definitions = await fetch("/api/destinyDefinitions")
             .then(response=> response.json())
+            
         this.definitions = definitions;
         return definitions;
     }
@@ -55,7 +56,6 @@ export class DestinyStore{
             console.log(results);
 
             const definitions = await this.getDefinitions();
-            // const {definitions} = this
             console.log(definitions);
 
             // const weapons = results.map(({characterEquipment: {data: weaponList}})=>{
@@ -63,6 +63,19 @@ export class DestinyStore{
             //         return items.map((obj)=>{
             //             const def = definitions.items[obj.itemHash]
             //             return {...obj, name: def.n, description: def.d, type: def.t}
+            //         });
+            //     });
+            // })
+            // .map((player)=>{
+            //     return player.map((character)=>{
+            //         return character.filter(({bucketHash})=>{
+            //             switch(bucketHash){
+            //                 case 1498876634:
+            //                 case 2465295065:
+            //                 case 953998645:
+            //                     return true;
+            //                     break;
+            //             }
             //         });
             //     });
             // });

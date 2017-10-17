@@ -7,3 +7,4 @@ import store from "store";
 import styles from "sass/global";
 
 ReactDOM.render(<MobxRouter store={store}/>, document.getElementById('app'));
+// ReactDOM.render(<Home/>, document.getElementById('app'));

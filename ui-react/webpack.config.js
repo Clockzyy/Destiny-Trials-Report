@@ -63,7 +63,11 @@ const different = function(build) {
                     inline: true,
                     stats: 'errors-only',
                     host: process.env.HOST,
-                    port: process.env.PORT
+                    port: process.env.PORT,
+                    proxy: {
+                        "/api": "http://localhost:3001"
+                    }
+                    
                 },
                 module: {
                     rules: [

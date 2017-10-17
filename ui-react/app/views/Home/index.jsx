@@ -9,7 +9,7 @@ let cx = classNames.bind(styles);
 import store from "store";
 import LoadingScreen from "containers/LoadingScreen";
 import WeekReport from "containers/WeekReport";
-// import Navbar from "containers/Navbar";
+import Navbar from "containers/Navbar";
 @observer
 export default class Home extends React.Component {
     constructor() {
@@ -23,11 +23,11 @@ export default class Home extends React.Component {
         const className = cx("base")
 
         if(store.ui.loading){
-            return <LoadingScreen/>
+            return (<LoadingScreen/>)
         }else{
             return (
                 <div className={className}>
-                    {/* <Navbar/> */}
+                    {<Navbar/>}
                     <WeekReport/>
                 </div>
             );

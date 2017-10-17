@@ -8,10 +8,10 @@ const views = {
         path: "/",
         component: <Home/>
     }),
-    // search: new Route({
-    //     path: "/search/:type/:name",
-    //     component: <Search/>
-    // })
+    search: new Route({
+        path: "/search/:type/:name",
+        component: <Search/>
+    })
 
 }
 export default views;
